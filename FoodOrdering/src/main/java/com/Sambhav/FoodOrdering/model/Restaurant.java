@@ -29,8 +29,6 @@ public class Restaurant
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
 
-    @OneToMany(mappedBy = "owner")
-    private List<Restaurant> restaurants;  // One owner can have many restaurants
     @Embedded
     private ContactInformation contactInformation;
 
@@ -58,7 +56,7 @@ public class Restaurant
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
